@@ -42,8 +42,8 @@ class DifferentialDriveNode(Node):
         angular_z = msg.twist.angular.z # Rotation speed
         left_radps = linear_x/self.wheel_radius + angular_z * self.wheel_seperation * .5 / self.wheel_radius
         right_radps = linear_x/self.wheel_radius - angular_z * self.wheel_seperation * .5 / self.wheel_radius
-        left_rpm = self.left_wheel_radius_multiplier * left_radps * 60 / math.pi
-        right_rpm = self.right_wheel_radius_multiplier * right_radps * 60 / math.pi
+        left_rpm = self.left_wheel_radius_multiplier * left_radps * 60 / (2*math.pi)
+        right_rpm = self.right_wheel_radius_multiplier * right_radps * 60 / (2*math.pi)
         limit = 100  # Suspect bug in buildhat library (confuses limits between percentage and rpm modes)
         # So we limit rpm's to prevent buildhat from crashing.
         left_rpm = min(max(left_rpm, -limit), limit)
