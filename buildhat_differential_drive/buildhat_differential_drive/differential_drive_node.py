@@ -11,8 +11,8 @@ class DifferentialDriveNode(Node):
         super().__init__('buildhat_differential_drive')
         self.declare_parameter('wheel_radius', .05)
         self.wheel_radius = self.get_parameter('wheel_radius').get_parameter_value().double_value
-        self.declare_parameter('wheel_seperation', .10)
-        self.wheel_seperation = self.get_parameter('wheel_seperation').get_parameter_value().double_value
+        self.declare_parameter('wheel_separation', .10)
+        self.wheel_separation = self.get_parameter('wheel_separation').get_parameter_value().double_value
         # Note your cmd_vel_timeout will not be effective if less than polling_frequency
         self.declare_parameter('cmd_vel_timeout', .5)
         self.cmd_vel_timeout = self.get_parameter('cmd_vel_timeout').get_parameter_value().double_value
@@ -40,8 +40,8 @@ class DifferentialDriveNode(Node):
         self.last_msg_timestamp = time.time()
         linear_x = msg.twist.linear.x   # Forward/backward speed
         angular_z = msg.twist.angular.z # Rotation speed
-        left_radps = linear_x/self.wheel_radius + angular_z * self.wheel_seperation * .5 / self.wheel_radius
-        right_radps = linear_x/self.wheel_radius - angular_z * self.wheel_seperation * .5 / self.wheel_radius
+        left_radps = linear_x/self.wheel_radius + angular_z * self.wheel_separation * .5 / self.wheel_radius
+        right_radps = linear_x/self.wheel_radius - angular_z * self.wheel_separation * .5 / self.wheel_radius
         left_rpm = self.left_wheel_radius_multiplier * left_radps * 60 / (2*math.pi)
         right_rpm = self.right_wheel_radius_multiplier * right_radps * 60 / (2*math.pi)
         limit = 100  # Suspect bug in buildhat library (confuses limits between percentage and rpm modes)
