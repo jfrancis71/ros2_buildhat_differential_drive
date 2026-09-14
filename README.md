@@ -1,6 +1,14 @@
 # ros2_buildhat_differential_drive
 ROS2 Differential Drive Controller for Raspberry Pi Build HAT (a hardware connector for Lego Spike Technic)
 
+### Tested Hardware
+
+Raspberry Pi 5 (8GB), Raspberry Pi Foundation BuildHat
+
+### Tested Software
+
+Ubuntu 24.04, ROS2 Jazzy, Raspberry Pi Foundation BuildHat (Python version)
+
 ## Docker Install (for Brian the demo robot)
 
 For a docker install:
