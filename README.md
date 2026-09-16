@@ -1,5 +1,5 @@
 # ros2_buildhat_differential_drive
-ROS2 Differential Drive Controller for Raspberry Pi Build HAT (a hardware connector for Lego Spike Technic)
+ROS2 Differential Drive Controller for Raspberry Pi Build HAT (a hardware connector for Lego Spike Prime)
 
 <img src=./brian/images/front.jpg width=300> <img src=./brian/images/back.jpg width=300>
 
@@ -42,7 +42,7 @@ docker run -it --rm --net=host --ipc=host --device /dev/ttyAMA0 brian
 Similar to the ROS2 Control Differential Drive Controller
 
 - wheel_radius: radius of the wheels
-- wheel_seperation: distance (not radius) between the two main wheels
+- wheel_separation: distance (not radius) between the two main wheels
 - cmd_vel_timeout: timeout after which if no message received, motors stop
 - left_wheel_name: lego port name of left wheel
 - right_wheel_name: lego port name of right wheel
