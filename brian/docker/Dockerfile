@@ -2,6 +2,7 @@ FROM ros:jazzy-ros-base
 RUN apt update
 RUN apt install -y vim
 RUN apt install -y python3-pip
+RUN apt install -y ros-jazzy-tf-transformations
 RUN pip install --break-system-packages buildhat
 WORKDIR /root/ros2_ws
 RUN mkdir src
