@@ -16,7 +16,7 @@ Ubuntu 24.04, ROS2 Jazzy, Raspberry Pi Foundation BuildHat (Python version)
 For a docker install:
 
 ```
-docker build -t brian docker/
+docker build -t brian ./brian/docker/
 ```
 
 To run:
